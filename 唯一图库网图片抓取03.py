@@ -78,14 +78,14 @@ def download_pic(picSrc_list):
         print("没有图片可以下载。。。")
         return 0
 
-
-#http://www.mmonly.cc/mmtp/qcmn/290170.html
+#http://www.mmonly.cc/mmtp/qcmn/290170_2.html
 url_source = input("请输入网站url地址:")
-#url_source = 'http://www.mmonly.cc/mmtp/qcmn/290170.html'
-print(url_source)
+#print(url_source)
 url_split = url_source.split('/') #对输入的地址进行分割输出一个列表中
 pic_class = url_split[-2] #网站中美女图片所属分类 qcmn、xgmn、nymn、swmn、ctmn。。。 
-url_id = (url_split[-1].split('.')[-2])#再次分割取出.html的一串数字
+url_id = (re.search(r'\d*',url_split[-1]).group())#使用正则再次分割取出.html的一串数字
+print(url_id)
+
 url_list.append('http://www.mmonly.cc/mmtp/%s/%s.html' %(pic_class,url_id))
 
 try:
@@ -108,4 +108,4 @@ except Exception:
     print('读取失败！！！')
 #print(picSrc_list)
 
-download_pic(picSrc_list)
+#download_pic(picSrc_list)
