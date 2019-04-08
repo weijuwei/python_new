@@ -8,6 +8,8 @@ headers = {
 
 url = 'http://www.mmonly.cc/mmtp/qcmn/295255.html'
 
+
+
 html = requests.get(url,headers=headers)
 html.encoding = 'gbk' #设置编码格式
 
