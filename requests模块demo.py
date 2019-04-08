@@ -1,25 +1,32 @@
-import urllib
 import requests
+import random
 
-##定制请求头部
-headers = {
-   			'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko'
-   		  }
+url = 'http://www.qq.com'
 
-url = 'http://www.mmonly.cc/mmtp/qcmn/295255.html'
+# 定制请求头部 dict格式
+headers = [{'User-Agent':'Mozilla/5.0 (Windows NT 6.1; rv:60.0) Gecko/20100101 Firefox/60.0'},
+		   {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko'},
+		   {'User-Agent':'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'}]
 
-html = requests.get(url,headers=headers)
-html.encoding = 'gbk' #设置编码格式
+header = random.choice(headers)#随机选择一个请求头
+print(header)
 
-status_code = html.status_code#检测响应状态码 如果是4xx 5xx的状态码会抛出异常
-print(status_code)
+#header = {'User-Agent':'weijuwei china dongguan'}
+# html = requests.get(url,headers=header)
 
-data = html.text #取得响应的内容的文本形式
-#print(data)
+def get_src(url):
+	def get_content():
+		html = requests.get(url,headers=header)
+		html.encoding = 'utf-8'
+		return html
+	return get_content	
 
-content = html.content##二进制响应内容
-#print(content)
+get_html = get_src(url)
 
-res_header = html.headers #查看一个以字典形式展示的服务器响应头
-print(res_header)
-print(res_header['Content-Type'])
+html = get_html()
+
+content = html.text
+print(content)
+
+resp = html.headers
+print(resp)
