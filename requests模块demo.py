@@ -15,7 +15,7 @@ html = requests.get(url,headers=headers)
 html.encoding = 'gbk' #设置编码格式
 
 #header = {'User-Agent':'weijuwei china dongguan'}
-# html = requests.get(url,headers=header)
+#html = requests.get(url,headers=header)
 
 def get_src(url):
 	def get_content():
