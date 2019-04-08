@@ -11,12 +11,9 @@ headers = [{'User-Agent':'Mozilla/5.0 (Windows NT 6.1; rv:60.0) Gecko/20100101 F
 <<<<<<< HEAD
 header = random.choice(headers)#随机选择一个请求头
 print(header)
-=======
-
 
 html = requests.get(url,headers=headers)
 html.encoding = 'gbk' #设置编码格式
->>>>>>> dev
 
 #header = {'User-Agent':'weijuwei china dongguan'}
 # html = requests.get(url,headers=header)
@@ -30,7 +27,6 @@ def get_src(url):
 
 get_html = get_src(url)
 
-<<<<<<< HEAD
 html = get_html()
 
 content = html.text
@@ -42,4 +38,3 @@ print(resp)
 res_header = html.headers #查看一个以字典形式展示的服务器响应头
 print(res_header)
 print(res_header['Content-Type'])
->>>>>>> dev
