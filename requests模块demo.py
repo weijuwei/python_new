@@ -9,9 +9,9 @@ headers = [{'User-Agent':'Mozilla/5.0 (Windows NT 6.1; rv:60.0) Gecko/20100101 F
 		   {'User-Agent':'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'}]
 
 header = random.choice(headers)#随机选择一个请求头
-print(header)
+# print(header)
 
-html = requests.get(url,headers=headers)
+html = requests.get(url,headers=header)
 html.encoding = 'gbk' #设置编码格式
 
 #header = {'User-Agent':'weijuwei china dongguan'}
@@ -29,11 +29,44 @@ get_html = get_src(url)
 html = get_html()
 
 content = html.text
-print(content)
+# print(content)
 
-resp = html.headers
-print(resp)
+resp_header = html.headers #查看一个以字典形式展示的服务器响应头
+# print(resp_header)
+print(resp_header['Content-Type'])
 
-res_header = html.headers #查看一个以字典形式展示的服务器响应头
-print(res_header)
-print(res_header['Content-Type'])
+#发送cookies到服务器
+url2 = 'http://httpbin.org/cookies'
+cookies = dict(cookies_are='working')
+
+re = requests.get(url2,cookies=cookies)
+print(re.text)
+
+#传递URL参数字典格式 get请求
+url3 = 'http://httpbin.org/get'
+url_params = {'name':'tom','age':29}
+r = requests.get(url3,headers=header,params=url_params)
+print(r.url)  #结果是：'http://httpbin.org/get?name=tom&age=29'
+
+url4 = 'http://httpbin.org/post'
+#POST请求
+##传入一个字典类型的数据
+# rp = requests.post(url4,data=url_params)
+# print(rp.text)
+# '''
+#   "form": {
+#     "age": "29", 
+#     "name": "tom"
+#   },'''
+
+#传入一个元组 相同的key对应不同的value
+payload = (('key1', 'value1'), ('key1', 'value2'))
+rp = requests.post(url4,data=payload)
+print(rp.text)
+'''
+  "form": {
+    "key1": [
+      "value1", 
+      "value2"
+    ]
+  }'''
