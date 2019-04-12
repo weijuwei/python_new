@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.DEBUG, format = '%(asctime)s - %(levelname)s -
 
 logging.debug('Start of program')
 
-#logging.disable(logging.CRITICAL) #禁用日志 禁用之后的的日志信息，之前定义的无影响
+# logging.disable(logging.CRITICAL) #禁用日志 禁用之后的的日志信息，之前定义的无影响
 def factorial(n):
 	logging.debug('Start of factorial(%s)' %(n))
 	total = 1
