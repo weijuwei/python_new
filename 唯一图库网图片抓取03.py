@@ -2,8 +2,6 @@
 from bs4 import BeautifulSoup
 import re,time,random,string,os
 import requests
-from urllib.request import *
-
 
 total_page = 0 #图片的数量
 
