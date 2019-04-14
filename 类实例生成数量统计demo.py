@@ -6,7 +6,7 @@ class Student():
         self.age = age
 
     def get_info(self):
-        return "name is " + self.name + " and " + str(self.age) + " year old"
+        return "名字：" + self.name.ljust(10) + "年龄：" + str(self.age)
 
 
 class School:
@@ -37,20 +37,19 @@ class School:
     def set_counter(self):  # 类方法
         self.counter += 1
 
-sch = School('tsinghua')
+sch = School('Tsinghua')
 stu1 = Student("Tom", 3)
 stu2 = Student("Jerry", 8)
 stu3 = Student("Bob", 5)
 stu4 = Student("Lucy", 7)
 stu5 = Student("Lily", 7)
-
 sch.add_stu(stu3)
 sch.add_stu(stu1)
 sch.add_stu(stu2)
 sch.add_stu(stu4)
 sch.add_stu(stu5)
 print("---------------------")
-print("学生数量是：",sch.counter)
+print(sch.name+"学生数量是：",sch.counter)
 print("---------------------")
 
 sch.get_stu_info()
