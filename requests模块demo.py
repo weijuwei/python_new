@@ -35,6 +35,20 @@ resp_header = html.headers #查看一个以字典形式展示的服务器响应�
 # print(resp_header)
 # print(resp_header['Content-Type'])
 
+# 获取cookie信息
+res = requests.get("https://www.baidu.com")
+print("----------------------cookie")
+for k,v in res.cookies.items():
+	print(k+' '+v)
+print("----------------------cookie")
+
+# cookie设置
+s = requests.Session()
+s.get("http://httpbin.org/cookies/set/number/12324343")
+res = s.get("http://httpbin.org/cookies")
+print(res.text)
+
+
 #发送cookies到服务器
 url2 = 'http://httpbin.org/cookies'
 cookies = dict(cookies_are='working')
@@ -71,3 +85,9 @@ print(rp.text)
       "value2"
     ]
   }'''
+
+
+# 文件上传
+files = {'file': open('test.json','rb')}
+res = requests.post("http://httpbin.org/post",files=files,headers=header)
+print(res.text)
