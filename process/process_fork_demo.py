@@ -3,7 +3,7 @@
 import os
 print('Process (%s) start ...' % os.getpid())
 
-pid = os.fork()
+pid = os.fork()  # 此方法针对Unix/Linux系统，Windows下不可以。
 
 if pid == 0:
     print ('I am child process (%s) and my parent is %s.'
