@@ -28,7 +28,7 @@ def mail_content_attach(content,from_addr,to_addr,subject,img_path):
     return msg.as_string()
 
 
-def send_mail(from_addr,to_addr,msg):
+def send_mail(from_addr,password,to_addr,msg):
     smtp_server = 'smtp.' + from_addr.split('@')[1]  # 邮箱SMTP服务器
 
     try:
@@ -55,6 +55,6 @@ if __name__ == '__main__':
 
 
     content = "你好，这封邮件时从python发过来的！！！！"
-    msg = mail_content(content,from_addr,to_addr,"测试邮件3")
+    msg = mail_content(content,from_addr,to_addr,"测试邮件4")
     # msg = mail_content_attach(content,from_addr,to_addr,"测试邮件3",'file')
-    send_mail(from_addr,to_addr,msg)
+    send_mail(from_addr,password,to_addr,msg)
