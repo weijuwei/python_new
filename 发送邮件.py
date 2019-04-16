@@ -36,10 +36,10 @@ def send_mail(from_addr,to_addr,msg):
         server.set_debuglevel(1)  # 在控制台输出详细信息
         server.login(from_addr, password)  # 登陆认证
         server.sendmail(from_addr, to_addr, msg)  # 发送邮件
+        server.quit()
     except smtplib.SMTPException:
         print("发送失败，请重新检查！！！")
-    finally:
-        server.quit()
+
 
 
 
