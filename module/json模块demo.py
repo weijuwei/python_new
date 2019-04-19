@@ -6,19 +6,21 @@ import json
 # json.loads() 反序列化一个json格式字符串为一个python对象
 # json.load() 从文件中读取并反序列化为一个json格式字符串
 
-dic = {'name':'汤姆','age':'23','sex':'M'}
+dic = {'name':'汤姆','age':'23','sex':'M','friend':{'name':'杰瑞','age':'22','sex':'F'}}
 # print(dic,type(dic))
 
-#序列化一个对象为json格式的字符串
+# 一个对象转换为json格式的字符串
 json1 = json.dumps(dic,ensure_ascii=False,indent=4) 
 print(json1,'\n',type(json1))
 
-#将序列化后的json格式的stream写入文件中
+# 将序列化后的json格式的stream写入文件中
 # f = open('test.json','w',encoding='utf-8')
 # json.dump(json1,f,ensure_ascii=False)
 # f.close()
 
-#反序列化
+print('----------------------------------')
+
+# 将json字符串还原为数据类型
 str1 = json.loads(json1)
 print(str1,'\t',type(str1))
 

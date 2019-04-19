@@ -5,7 +5,7 @@ import smtplib
 import time
 
 # 发送邮件 纯文本邮件
-def mail_content(content,from_addr,to_addr,subject):
+def transfer_mail(content,from_addr,to_addr,subject):
     msg = MIMEText(content,'plain','utf-8')
     msg['From'] = from_addr  # 邮件头部发件人信息
     msg['To'] = to_addr  # 邮件头部收件人信息
@@ -24,7 +24,6 @@ def mail_content(content,from_addr,to_addr,subject):
                 server.quit()
             except smtplib.SMTPException:
                 print("发送失败，请重新检查！！！")
-
 
     return send_mail
 
@@ -73,5 +72,5 @@ if __name__ == '__main__':
     # # msg = mail_content_attach(content,from_addr,to_addr,"测试邮件3",'file')
     # send_mail(from_addr,password,to_addr,msg)
 
-    sm = transf_mail(content,from_addr,to_addr,"测试邮件5")
+    sm = transfer_mail(content,from_addr,to_addr,"测试邮件5")
     sm(password)
