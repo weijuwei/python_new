@@ -1,10 +1,11 @@
 import time
 
-# 返回当前时间戳 从1970.01.01到当前时间的秒数
+# 返回当前时间字符串 从1970.01.01 00：00：00到当前时间的秒数
 print(time.time())
 
 # 将时间戳转换为当前时区的struct_time,如果无参数，默认为当前时间
 print(time.localtime(23432532))
+print(time.ctime(3284353554))
 
 # time.strftime(format[, t]) 根据指定的格式化字符串输出
 print(time.strftime('%Y-%m-%d %H:%M:%S'))
