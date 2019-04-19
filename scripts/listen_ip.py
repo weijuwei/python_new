@@ -37,8 +37,9 @@ def ip_notify(get_ip,record_ip):
 		to_addr = ''  # 收件人地址
 		password = ''  # 邮箱密码
 		subject = '公网ip地址变更通知'  # 邮件主题
-		msg = sm.mail_content(log,from_addr,to_addr,subject)
-		sm.send_mail(from_addr,password,to_addr,msg)
+		trans_mail = sm.transfer_mail(log,from_addr,to_addr,subject)
+		trans_mail(password)
+		
 	
 
 ip_tup = get_ip()
