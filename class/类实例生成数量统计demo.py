@@ -32,8 +32,8 @@ class School:
             print(stu.get_info())
 
     @classmethod
-    def set_counter(self):  # 类方法
-        self.__counter += 1
+    def set_counter(cls):  # 类方法
+        cls.__counter += 1
 
     def get_counter(self):
         return self.__counter
