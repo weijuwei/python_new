@@ -1,5 +1,3 @@
-import time
-
 class Student():
     def __init__(self, name, age):
         self.name = name
@@ -11,10 +9,10 @@ class Student():
 
 class School:
     __counter = 0  # 类属性，统计数量
+    students = []
 
     def __init__(self,name):  # 实例方法
         self.name = name
-        self.students = []
 
     def __str__(self):
         return "学校名字是 " + self.name
