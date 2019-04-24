@@ -19,7 +19,7 @@ config = {  # 定义一个字典存放数据库连接信息
 	}
 
 class mysql_cursor(object):  
-	def __init__(self,**cconfig):
+	def __init__(self,**config):
 		self.conn = mysql.connector.connect(**config)
 		self.cursor = self.conn.cursor()
 
