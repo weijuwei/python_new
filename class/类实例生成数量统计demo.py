@@ -10,7 +10,7 @@ class Student():
 
 
 class School:
-    counter = 0  # 类属性，统计数量
+    __counter = 0  # 类属性，统计数量
 
     def __init__(self,name):  # 实例方法
         self.name = name
@@ -20,7 +20,7 @@ class School:
         return "学校名字是 " + self.name
 
     def add_stu(self,stu):
-        if self.counter < 3:
+        if self.__counter < 3:
             if stu.age < 5:
                 print(stu.name + "年龄太小了,还没有到到达入学年龄")
             else:
@@ -35,7 +35,10 @@ class School:
 
     @classmethod
     def set_counter(self):  # 类方法
-        self.counter += 1
+        self.__counter += 1
+
+    def get_counter(self):
+        return self.__counter
 
 sch = School('Tsinghua')
 stu1 = Student("Tom", 3)
@@ -49,7 +52,8 @@ sch.add_stu(stu2)
 sch.add_stu(stu4)
 sch.add_stu(stu5)
 print("---------------------")
-print(sch.name+"学生数量是：",sch.counter)
+# print(sch.name+"学生数量是：",sch.counter)
+print(sch.name+"学生数量是：",sch.get_counter())
 print("---------------------")
 
 sch.get_stu_info()
