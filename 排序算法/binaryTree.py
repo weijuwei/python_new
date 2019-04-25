@@ -1,11 +1,11 @@
 class TreeNode:
-	def __init__(self,val,left=None,right=None):
+	def __init__(self,val,left=None,right=None):  # 二叉树节点
 		self.val = val
 		self.left = left
 		self.right = right
 
 
-class BinaryTree:
+class BinaryTree:  # 二叉树
 	def __init__(self,root=None):  
 		self.root = root
 
