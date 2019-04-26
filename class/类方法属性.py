@@ -21,7 +21,7 @@ class Students:
 		return self.__stu_nums
 
 	@classmethod
-	def get_stu_instance(cls,stu_str):  # 通过字符串,返回一个对象实例
+	def get_stu_instance(cls,stu_str):  # 通过向类方法传入字符串,返回一个对象实例
 		name,age = stu_str.split('-')
 		age = int(age)
 		return cls(name,age)
