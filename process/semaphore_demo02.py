@@ -2,7 +2,7 @@ import threading,time
 
 # 先对x进行赋值set操作，然后执行get操作
 
-s = threading.Semaphore(0)  # 同步信号量初始化为0 互斥信号量初始化为1
+s = threading.Semaphore(0)  # 信号量初始化为0
 
 x = 0  # 全局变量
 
