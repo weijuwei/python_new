@@ -1,6 +1,6 @@
 import threading,time
 
-s = threading.Semaphore(1)
+s = threading.Semaphore(2)
 
 class My_thread(threading.Thread):
 	def __init__(self,name):
