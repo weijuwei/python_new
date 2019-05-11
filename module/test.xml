@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+	<user id="0">
+		<name>Tom</name>
+		<age>22</age>
+		<sex>Male</sex>
+		<hobby name='swimming'/>
+	</user>
+	<user id="1">
+	 	<name>Jerry</name>
+	 	<age>24</age>
+	 	<sex>Male</sex>
+		<hobby name='basketball'/>	 	
+ 	</user>
+ 	<user id="2">
+ 	 	<name>Lucy</name>
+ 	 	<age>27</age>
+ 	 	<sex>Female</sex>
+		<hobby name='football'/> 	 	
+ 	</user>
+ 	<user id="3">
+ 		<name>Lily</name>
+ 		<age>28</age> 
+ 		<sex>Female</sex>
+ 		<hobby name='hiking'/>
+ 	</user> 
+</users>
