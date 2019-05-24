@@ -1,0 +1,6 @@
+os_test/
+*.dir
+*.dat
+*.bak
+test2.xml
+test3.xml
