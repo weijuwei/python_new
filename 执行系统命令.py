@@ -18,7 +18,7 @@ print(list1)
 # 可以读或者写(由mode决定，mode默认是’r')。如果mode为’r'，
 # 可以使用此函数的返回值调用read()来获取command命令的执行结果。
 result = os.popen("ifconfig" ,'r')
-r = result.read() 将读取结果保存到一个变量中
+r = result.read() #将读取结果保存到一个变量中
 
 # 使用subprocess模块
 subprocess.call('ls')
