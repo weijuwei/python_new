@@ -38,17 +38,17 @@ def createBg(qrImg,qrText):
   words_img = ImageDraw.Draw(bg) 
   
   # 获取文本size
-  qrText = qrText.split()
-  text_t, text_l, text_r, text_b = font.getbbox(qrText[0])
+  qrText1 = qrText.split()
+  text_t, text_l, text_r, text_b = font.getbbox(qrText1[0])
   
   # 两行文本位置
-  text1_position = ((bg_w - text_r) / 2, h)
-  text2_position = ((bg_w - text_r) / 2, h + text_b)
+  text_position = ((bg_w - text_r) / 2, h)
+  # text2_position = ((bg_w - text_r) / 2, h + text_b)
   # print(text_position)
   
   # 将文本添加到图片中
-  words_img.text(text1_position, qrText[0], fill="#000000", font=font)
-  words_img.text(text2_position, qrText[1], fill="#000000", font=font)
+  words_img.text(text_position, qrText, fill="#000000", font=font)
+  # words_img.text(text2_position, qrText[1], fill="#000000", font=font)
 
   # bg.show()
  
