@@ -1,4 +1,5 @@
-import os,cv2,time
+import os,time
+# import cv2
 from pyzbar.pyzbar import decode
 from PIL import Image
 # pip install opencv-python
@@ -9,10 +10,10 @@ if not os.path.exists("qrcode"):
 
 def capture_qrcode(image_path):
 
-	image = cv2.imread(image_path)
-	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-	qrcode_decode = decode(gray)
+	# image = cv2.imread(image_path)
+	# gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+	img = Image.open(image_path)
+	qrcode_decode = decode(img)
 
 	# 识别二维码内容(文本内容)，并处理成列表
 	datas = qrcode_decode[0][0].decode()
@@ -53,4 +54,4 @@ def main(png_dir):
 
 
 main("png")
-print("抓取二维码区域图片成功\n\n")
+print("抓取二维码区域图片成功")
